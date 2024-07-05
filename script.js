@@ -37,7 +37,7 @@ function buyUpgrade(index) {
     const upgrade = upgrades[index];
     if (points >= upgrade.cost) {
         points -= upgrade.cost;
-        upgrade.cost *= 1.5; 
+        upgrade.cost *= 2; 
         clickMultiplier += upgrade.effect;
         updatePointsDisplay();
         updateUpgradeList();
