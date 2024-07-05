@@ -3,30 +3,29 @@ let clickMultiplier = 1;
 
 let upgrades = [
     { 
-        name: "Double clicks",
+        name: "+2 clicks",
         cost: 50,
         effect: 2,
-        description: "Doubles your click points."
+        description: "Adds 2 to your click points."
     },
     {
-        name: "Triple clicks",
+        name: "The three clicks",
         cost: 100,
         effect: 3,
-        description: "Triples your click points."
+        description: "Adds 3 to your click points."
     },
     { 
-        name: "Solid Clicking",
+        name: "Finger Clicking",
         cost: 500,
         effect: 5,
-        description: "Quintuples your click points."
+        description: "Adds 5 to your click points."
     },
     { 
-        name: "Upgrade 4",
+        name: "2, 4's",
         cost: 1500,
         effect: 8,
-        description: "Your click points are multiplied by 8."
+        description: "Your click points are increased by 8."
     },
-    // Add more upgrades as needed
 ];
 
 function clickButton() {
@@ -38,10 +37,10 @@ function buyUpgrade(index) {
     const upgrade = upgrades[index];
     if (points >= upgrade.cost) {
         points -= upgrade.cost;
-        upgrade.cost *= 2; // Increase cost for next purchase
-        clickMultiplier += upgrade.effect; // Apply upgrade effect
+        upgrade.cost *= 1.5; 
+        clickMultiplier += upgrade.effect;
         updatePointsDisplay();
-        updateUpgradeList(); // Update displayed upgrades
+        updateUpgradeList();
     } else {
         alert("Not enough points to buy this upgrade!");
     }
@@ -53,7 +52,7 @@ function updatePointsDisplay() {
 
 function updateUpgradeList() {
     const upgradeList = document.getElementById('upgrade-list');
-    upgradeList.innerHTML = ''; // Clear existing list
+    upgradeList.innerHTML = '';
 
     upgrades.forEach((upgrade, index) => {
         const button = document.createElement('button');
