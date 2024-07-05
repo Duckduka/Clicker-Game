@@ -23,16 +23,25 @@ button {
     margin: 10px;
     padding: 10px 20px;
     font-size: 16px;
-    background-color: #3498db;
-    color: #fff;
+    background-color: #2ecc71; /* Green background */
+    color: #fff; /* White text */
     border: none;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow */
 }
 
 button:hover {
-    background-color: #2980b9;
+    background-color: #27ae60; /* Darker green on hover */
+}
+
+button:focus {
+    outline: none; /* Remove outline on focus */
+}
+
+button:active {
+    transform: translateY(1px); /* Button press effect */
 }
 
 #points {
